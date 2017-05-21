@@ -25,6 +25,7 @@ def maketweet():
         api.update_status(line)
         print line
         readtweet()
+#this function will read the tweet and also tell how many words there are in the tweet.
 def readtweet():
     for tweet in tweepy.Cursor(api.user_timeline).items():
         tweettest = tweet.text
