@@ -14,10 +14,19 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret,callbackurl)
 auth.set_access_token(access_token, access_secret)
  
 api = tweepy.API(auth)
-for tweet in tweepy.Cursor(api.user_timeline).items():
 
-    tweettest = tweet.text
-    print tweettest
-    tweettest = tweettest.split()
-    amountwords = len(tweettest)
-    print "word count:",amountwords
+def maketweet():
+    tweetlist = ['This is a new tweet', 'This is also a newest tweet', 'this is also a good tweet']
+
+    for line in tweetlist: 
+        api.update_status(line)
+        print line
+        readtweet()
+def readtweet():
+    for tweet in tweepy.Cursor(api.user_timeline).items():
+        tweettest = tweet.text
+        print tweettest
+        tweettest = tweettest.split()
+        amountwords = len(tweettest)
+        print "word count:",amountwords
+maketweet()
