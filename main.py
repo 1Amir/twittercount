@@ -1,3 +1,4 @@
+import random
 import json
 import tweepy
 from tweepy import OAuthHandler
@@ -14,10 +15,12 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret,callbackurl)
 auth.set_access_token(access_token, access_secret)
  
 api = tweepy.API(auth)
-
+#this function will make a random tweet made up of one of these letters.note:Sometimes it picks the same letter.
 def maketweet():
-    tweetlist = ['This is a new tweet', 'This is also a newest tweet', 'this is also a good tweet']
-
+    randomletters = random.choice(['a','b','c','d','e','f','g','h','i','t','v','W','X','w','x','z','y','B','U','Y'])
+    random.shuffle(randomletters)
+    tweetlist = randomletters
+    random.choice(tweetlist)
     for line in tweetlist: 
         api.update_status(line)
         print line
