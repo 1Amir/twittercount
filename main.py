@@ -16,8 +16,8 @@ auth.set_access_token(access_token, access_secret)
 api = tweepy.API(auth)
 for tweet in tweepy.Cursor(api.user_timeline).items():
 
-    this = tweet.text
-    print this
-    this = this.split()
-    amountwords = len(this)
+    tweettest = tweet.text
+    print tweettest
+    tweettest = tweettest.split()
+    amountwords = len(tweettest)
     print "word count:",amountwords
