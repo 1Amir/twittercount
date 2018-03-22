@@ -17,7 +17,7 @@ auth.set_access_token(access_token, access_secret)
 api = tweepy.API(auth)
 #this function will make a random tweet made up of one of these letters.note:Sometimes it picks the same letter.
 def maketweet():
-    randomletters = random.choice(['a','b','c','d','e','f','g','h','i','t','v','W','X','w','x','z','y','B','U','Y'])
+    randomletters = random.choice(['amir','baka','corner','destiny','ellen','finish','getitdone','h','i','t','v','W','X','w','x','z','y','B','U','Y'])
     random.shuffle(randomletters)
     tweetlist = randomletters
     random.choice(tweetlist)
